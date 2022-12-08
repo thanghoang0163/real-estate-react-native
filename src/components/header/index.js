@@ -9,12 +9,15 @@ import {neutral, title} from '../../styles';
 
 const styles = StyleSheet.create({
   header: {
+    position: 'relative',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    width: '100%',
     paddingHorizontal: 40,
     paddingVertical: 20,
     backgroundColor: neutral.white,
+    zIndex: 1,
   },
   headerImg: {
     width: 15,

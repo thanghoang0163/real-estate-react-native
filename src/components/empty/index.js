@@ -1,25 +1,19 @@
 import React from 'react';
-import {
-  View,
-  StyleSheet,
-  Image,
-  Text,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {View, StyleSheet, Image, Text, Dimensions} from 'react-native';
+import BtnClick from '../button';
 import {neutral, branchColor} from '../../styles';
 
 const styles = StyleSheet.create({
   container: {
-    minHeight: Dimensions.get('window').height,
+    flex: 1,
     backgroundColor: neutral.white,
   },
   content: {
+    flex: 1,
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    height: '80%',
     paddingHorizontal: 50,
   },
   bigText: {
@@ -34,20 +28,6 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     marginBottom: 20,
   },
-  btn: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    padding: 15,
-    backgroundColor: branchColor.newGreen,
-    borderRadius: 8,
-  },
-  btnText: {
-    fontSize: 17,
-    fontWeight: '600',
-    color: neutral.white,
-  },
 });
 
 function Empty({bigText, smallText, onPress, btnText}) {
@@ -57,9 +37,11 @@ function Empty({bigText, smallText, onPress, btnText}) {
         <Image source={require('../../assets/images/empty.png')} />
         <Text style={styles.bigText}>{bigText}</Text>
         <Text style={styles.smallText}>{smallText}</Text>
-        <TouchableOpacity style={styles.btn} onPress={onPress}>
-          <Text style={styles.btnText}>{btnText}</Text>
-        </TouchableOpacity>
+        <BtnClick
+          title={btnText}
+          color={branchColor.newGreen}
+          onPress={onPress}
+        />
       </View>
     </View>
   );

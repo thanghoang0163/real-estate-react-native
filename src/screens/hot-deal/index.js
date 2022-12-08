@@ -54,21 +54,23 @@ const styles = StyleSheet.create({
 
 function HotDeal() {
   return (
-    <ScrollView style={styles.container}>
+    <>
       <Header isHidden={true} title="Hot deal" style={styles.title} />
-      <View style={styles.content}>
-        {HotDealList.map(item => {
-          return (
-            <CardDeal
-              key={item.id}
-              imgSrc={item.imgSrc}
-              desc={item.desc}
-              title={item.title}
-            />
-          );
-        })}
-      </View>
-    </ScrollView>
+      <ScrollView contentContainerStyle={styles.container}>
+        <View style={styles.content}>
+          {HotDealList.map(item => {
+            return (
+              <CardDeal
+                key={item.id}
+                imgSrc={item.imgSrc}
+                desc={item.desc}
+                title={item.title}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
+    </>
   );
 }
 

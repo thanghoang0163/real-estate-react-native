@@ -50,7 +50,7 @@ function Search({navigation: {navigate}}) {
   const [isActived, setIsActived] = useState(true);
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}>
       <Searchbar
         placeholder="Bấm để tìm kiếm"
         icon={() => {

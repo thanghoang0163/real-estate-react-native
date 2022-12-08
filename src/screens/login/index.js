@@ -101,7 +101,7 @@ function Login({navigation}) {
           isEmpty={isEmpty}
           title="Đăng nhập"
           onPress={() => {
-            !isEmpty ? navigation.navigate('Detail') : null;
+            navigation.navigate('Detail');
           }}
           disabled={isEmpty ? true : false}
           color={branchColor.newGreen}

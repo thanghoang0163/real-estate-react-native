@@ -43,6 +43,9 @@ const NotifyList = [
 ];
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
   title: {
     fontSize: 26,
   },
@@ -52,34 +55,35 @@ const styles = StyleSheet.create({
 });
 
 function Notification() {
-  const [isEmpty, setIsEmpty] = useState(false);
+  const [isEmpty, setIsEmpty] = useState(true);
 
   return (
-    <ScrollView style={styles.container}>
+    <>
       <Header isHidden={true} title="Thông báo" style={styles.title} />
-
-      {isEmpty ? (
-        <Empty
-          bigText="Tài khoản đại lý"
-          smallText="Đăng ký tài khoản để nhận thêm nhiều thông tin về ưu đãi"
-          btnText="Đăng ký ngay"
-        />
-      ) : (
-        <View style={styles.content}>
-          {NotifyList.map(item => {
-            return (
-              <CardNotify
-                key={item.id}
-                imgSrc={item.imgSrc}
-                title={item.title}
-                locationText={item.location}
-                time={item.time}
-              />
-            );
-          })}
-        </View>
-      )}
-    </ScrollView>
+      <ScrollView contentContainerStyle={styles.container}>
+        {isEmpty ? (
+          <Empty
+            bigText="Tài khoản đại lý"
+            smallText="Đăng ký tài khoản để nhận thêm nhiều thông tin về ưu đãi"
+            btnText="Đăng ký ngay"
+          />
+        ) : (
+          <View style={styles.content}>
+            {NotifyList.map(item => {
+              return (
+                <CardNotify
+                  key={item.id}
+                  imgSrc={item.imgSrc}
+                  title={item.title}
+                  locationText={item.location}
+                  time={item.time}
+                />
+              );
+            })}
+          </View>
+        )}
+      </ScrollView>
+    </>
   );
 }
 

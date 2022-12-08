@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <SafeAreaProvider>
+    <>
       <StatusBar backgroundColor="#fff" />
       <NavigationContainer>
         <Stack.Navigator>
@@ -48,7 +48,7 @@ function App() {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaProvider>
+    </>
   );
 }
 

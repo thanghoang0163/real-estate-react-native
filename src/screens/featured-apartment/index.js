@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
 
 function FeaturedApartment({navigation}) {
   return (
-    <View>
+    <>
       <Header
         isBack={false}
         title="Căn hộ nổi bật"
@@ -92,7 +92,7 @@ function FeaturedApartment({navigation}) {
           navigation.goBack();
         }}
       />
-      <ScrollView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         {ApartmentList.map(item => {
           return (
             <CardFeature
@@ -107,7 +107,7 @@ function FeaturedApartment({navigation}) {
           );
         })}
       </ScrollView>
-    </View>
+    </>
   );
 }
 

@@ -21,6 +21,7 @@ import CheckBox from 'react-native-check-box';
 import Input from '../../components/input';
 import InputPassword from '../../components/input-pass';
 import BtnClick from '../../components/button';
+import InputPhone from '../../components/input-phone';
 
 const styles = StyleSheet.create({
   container: {
@@ -107,24 +108,6 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     paddingHorizontal: 10,
   },
-  verify: {
-    marginTop: 10,
-  },
-  phone: {
-    display: 'flex',
-    flexDirection: 'row',
-  },
-  phoneCode: {
-    marginRight: 10,
-  },
-  phoneCodeText: {
-    fontSize: 15,
-    color: neutral.title,
-    marginRight: 10,
-  },
-  inputPhone: {
-    flex: 1,
-  },
 });
 
 function Register({navigation}) {
@@ -145,7 +128,7 @@ function Register({navigation}) {
           navigation.goBack(null);
         }}
       />
-      <ScrollView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Đăng ký</Text>
           <Text style={styles.subTitle}>
@@ -176,23 +159,7 @@ function Register({navigation}) {
         </View>
         <View style={styles.content}>
           {isActived ? (
-            <View style={styles.verify}>
-              <Text style={styles.titleVerify}>SỐ ĐIỆN THOẠI</Text>
-              <View style={styles.phone}>
-                <View style={[styles.phoneCode, styles.input]}>
-                  <Text style={styles.phoneCodeText}>VN +84</Text>
-                  <Image
-                    source={require('../../assets/icons/arrow-bottom.png')}
-                  />
-                </View>
-                <TextInput
-                  style={[styles.input, styles.inputPhone]}
-                  placeholder="Nhập số điện thoại"
-                  placeholderTextColor={neutral.subText}
-                  onChangeText={() => {}}
-                />
-              </View>
-            </View>
+            <InputPhone />
           ) : (
             <>
               <View style={styles.name}>
@@ -232,7 +199,6 @@ function Register({navigation}) {
               </View>
             </>
           )}
-
           <View style={styles.term}>
             <CheckBox
               style={styles.checkbox}
