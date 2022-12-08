@@ -1,30 +1,51 @@
-import {TouchableWithoutFeedback, Image, StyleSheet, View} from 'react-native';
-import {neutral} from '../../styles';
+import {
+  TouchableWithoutFeedback,
+  Image,
+  StyleSheet,
+  View,
+  Text,
+} from 'react-native';
+import {neutral, title} from '../../styles';
 
 const styles = StyleSheet.create({
   header: {
-    paddingTop: 20,
-    paddingHorizontal: 20,
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 40,
+    paddingVertical: 20,
     backgroundColor: neutral.white,
   },
   headerImg: {
-    width: 8,
+    width: 15,
     height: 15,
+    marginRight: 20,
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#1B1E24',
   },
 });
 
-function Header({navigation}) {
+function Header({onPress, isBack, title, isHidden, style}) {
   return (
     <View style={styles.header}>
-      <TouchableWithoutFeedback
-        onPress={() => {
-          navigation.goBack(null);
-        }}>
-        <Image
-          style={styles.headerImg}
-          source={require('../../assets/icons/arrow-left.png')}
-        />
+      <TouchableWithoutFeedback onPress={onPress}>
+        {isHidden ? (
+          <View></View>
+        ) : (
+          <Image
+            style={styles.headerImg}
+            source={
+              isBack
+                ? require('../../assets/icons/arrow-left.png')
+                : require('../../assets/icons/display-hidden.png')
+            }
+          />
+        )}
       </TouchableWithoutFeedback>
+      <Text style={[styles.title, style]}>{title}</Text>
     </View>
   );
 }

@@ -30,7 +30,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleContainer: {
-    paddingVertical: 40,
+    paddingBottom: 40,
+    paddingTop: 20,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Register({navigation: {navigate}}) {
+function Register({navigation}) {
   const [hidePass, setHidePass] = useState(true);
   const [hidePassAgain, setHidePassAgain] = useState(true);
   const [isChecked, setIsChecked] = useState(false);
@@ -138,7 +139,12 @@ function Register({navigation: {navigate}}) {
 
   return (
     <>
-      <Header />
+      <Header
+        isBack={true}
+        onPress={() => {
+          navigation.goBack(null);
+        }}
+      />
       <ScrollView style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Đăng ký</Text>
@@ -202,9 +208,6 @@ function Register({navigation: {navigate}}) {
                   title="EMAIL"
                   placeholder="Nhập vào email"
                   imgLeft={require('../../assets/icons/mail.png')}
-                  onChangeText={e => {
-                    setEmailText(e);
-                  }}
                 />
                 <InputPassword
                   title="MẬT KHẨU"
@@ -253,7 +256,7 @@ function Register({navigation: {navigate}}) {
             <Text style={footerText}>Đã có tài khoản ?</Text>
             <TouchableWithoutFeedback
               onPress={() => {
-                navigate('Home');
+                navigation.navigate('Home');
               }}>
               <Text style={footerBtn}>Đăng nhập</Text>
             </TouchableWithoutFeedback>

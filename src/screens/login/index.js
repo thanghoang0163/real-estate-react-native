@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   titleContainer: {
-    paddingVertical: 40,
+    paddingBottom: 40,
+    paddingTop: 20,
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -44,7 +45,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Login({navigation: {navigate}}) {
+function Login({navigation}) {
   const [isEmpty, setIsEmpty] = useState(true);
   const [hidePass, setHidePass] = useState(true);
   const [emailText, setEmailText] = useState('');
@@ -55,7 +56,14 @@ function Login({navigation: {navigate}}) {
   });
   return (
     <>
-      <Header />
+      <Header
+        isBack={true}
+        onPress={() => {
+          () => {
+            navigation.goBack();
+          };
+        }}
+      />
       <View style={styles.container}>
         <View style={styles.titleContainer}>
           <Text style={styles.title}>Đăng nhập</Text>
@@ -93,7 +101,7 @@ function Login({navigation: {navigate}}) {
           isEmpty={isEmpty}
           title="Đăng nhập"
           onPress={() => {
-            !isEmpty ? navigate('Detail') : null;
+            !isEmpty ? navigation.navigate('Detail') : null;
           }}
           disabled={isEmpty ? true : false}
           color={branchColor.newGreen}
@@ -102,7 +110,7 @@ function Login({navigation: {navigate}}) {
           <Text style={footerText}>Bạn chưa có tài khoản ?</Text>
           <TouchableWithoutFeedback
             onPress={() => {
-              navigate('Register');
+              navigation.navigate('Register');
             }}>
             <Text style={footerBtn}>Đăng ký</Text>
           </TouchableWithoutFeedback>

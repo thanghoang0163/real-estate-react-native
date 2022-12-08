@@ -1,10 +1,11 @@
 import {Image, StyleSheet} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import Search from '../search';
+import HotDeal from '../hot-deal';
+import Notification from '../notification';
+import Account from '../account';
 
-import Search from './search';
-import HotDeal from './hot-deal';
-import Notify from './notify';
-import Account from './account';
+import {branchColor} from '../../styles';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,8 +23,9 @@ function Detail() {
         component={Search}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: '#B47A2C',
-          tabBarIcon: () => {
+          tabBarActiveTintColor: '#D6963E',
+          tabBarInactiveTintColor: branchColor.newGreen,
+          tabBarIcon: ({focused}) => {
             return (
               <Image source={require('../../assets/icons/mini-logo.png')} />
             );
@@ -35,12 +37,17 @@ function Detail() {
         component={HotDeal}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: '#B47A2C',
-          tabBarIcon: () => {
+          tabBarActiveTintColor: '#D6963E',
+          tabBarInactiveTintColor: branchColor.newGreen,
+          tabBarIcon: ({focused}) => {
             return (
               <Image
                 style={styles.tabBarImg}
-                source={require('../../assets/icons/gift.png')}
+                source={
+                  focused
+                    ? require('../../assets/icons/gift-active.png')
+                    : require('../../assets/icons/gift.png')
+                }
               />
             );
           },
@@ -48,15 +55,20 @@ function Detail() {
       />
       <Tab.Screen
         name="Thông báo"
-        component={Notify}
+        component={Notification}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: '#B47A2C',
-          tabBarIcon: () => {
+          tabBarActiveTintColor: '#D6963E',
+          tabBarInactiveTintColor: branchColor.newGreen,
+          tabBarIcon: ({focused}) => {
             return (
               <Image
                 style={styles.tabBarImg}
-                source={require('../../assets/icons/bell.png')}
+                source={
+                  focused
+                    ? require('../../assets/icons/bell-active.png')
+                    : require('../../assets/icons/bell.png')
+                }
               />
             );
           },
@@ -67,12 +79,17 @@ function Detail() {
         component={Account}
         options={{
           headerShown: false,
-          tabBarActiveTintColor: '#B47A2C',
-          tabBarIcon: () => {
+          tabBarActiveTintColor: '#D6963E',
+          tabBarInactiveTintColor: branchColor.newGreen,
+          tabBarIcon: ({focused}) => {
             return (
               <Image
                 style={styles.tabBarImg}
-                source={require('../../assets/icons/user.png')}
+                source={
+                  focused
+                    ? require('../../assets/icons/user-active.png')
+                    : require('../../assets/icons/user.png')
+                }
               />
             );
           },

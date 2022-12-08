@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
 function Splash() {
   return (
     <View style={styles.container}>
-      <Image source={require('../../assets/icons/logo.png')} />
+      <Image source={require('../../assets/images/logo.png')} />
     </View>
   );
 }

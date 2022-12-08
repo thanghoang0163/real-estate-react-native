@@ -1,11 +1,11 @@
 import {useState} from 'react';
 import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
 import {Searchbar} from 'react-native-paper';
-import CarouselList from '../../../components/carousel';
-import CarDetail from '../../../components/card-detail';
+import CarouselList from '../../components/carousel';
+import CarDetail from '../../components/card-detail';
 import {Tab} from '@rneui/themed';
 
-import {neutral, branchColor} from '../../../styles';
+import {neutral, branchColor} from '../../styles';
 import {style} from 'deprecated-react-native-prop-types/DeprecatedTextPropTypes';
 
 const styles = StyleSheet.create({
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Search() {
+function Search({navigation: {navigate}}) {
   const [index, setIndex] = useState(0);
   const [isActived, setIsActived] = useState(true);
 
@@ -54,7 +54,7 @@ function Search() {
       <Searchbar
         placeholder="Bấm để tìm kiếm"
         icon={() => {
-          return <Image source={require('../../../assets/icons/search.png')} />;
+          return <Image source={require('../../assets/icons/search.png')} />;
         }}
       />
       <Text style={styles.title}>DỰ ÁN NỔI BẬT</Text>
@@ -102,25 +102,31 @@ function Search() {
         quả
       </Text>
       <CarDetail
-        imgSrc={require('../../../assets/images/thumb-large.png')}
+        imgSrc={require('../../assets/images/thumb-large.png')}
         title="CĂN HỘ"
         name="1 Bedroom Apartment Campsie"
         address="2464 Royal Ln. Mesa, Melbourne"
         price={670000}
+        onPress={() => navigate('FeaturedApartment')}
+        amountApartment={13}
       />
       <CarDetail
-        imgSrc={require('../../../assets/images/thumb-large.png')}
+        imgSrc={require('../../assets/images/thumb-large.png')}
         title="CĂN HỘ"
         name="1 Bedroom Apartment Campsie"
         address="2464 Royal Ln. Mesa, Melbourne"
         price={670000}
+        onPress={() => navigate('FeaturedApartment')}
+        amountApartment={13}
       />
       <CarDetail
-        imgSrc={require('../../../assets/images/thumb-large.png')}
+        imgSrc={require('../../assets/images/thumb-large.png')}
         title="CĂN HỘ"
         name="1 Bedroom Apartment Campsie"
         address="2464 Royal Ln. Mesa, Melbourne"
         price={670000}
+        onPress={() => navigate('FeaturedApartment')}
+        amountApartment={13}
       />
     </ScrollView>
   );
