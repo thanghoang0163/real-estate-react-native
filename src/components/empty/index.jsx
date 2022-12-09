@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Image, Text} from 'react-native';
 import BtnClick from '../button';
 import {styles} from './styles';
+import {branchColor} from '../../styles';
 
 function Empty({bigText, smallText, onPress, btnText}) {
   return (

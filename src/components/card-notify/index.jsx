@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text, Image, StyleSheet} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {styles} from './styles';
+
 function CardNotify({imgSrc, title, locationText, time}) {
   return (
     <View style={styles.container}>
