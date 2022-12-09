@@ -3,6 +3,7 @@ import {neutral, branchColor} from '../../styles';
 
 export const styles = StyleSheet.create({
   button: {
+    width: '100%',
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 8,

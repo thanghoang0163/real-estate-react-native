@@ -10,9 +10,13 @@ export const styles = StyleSheet.create({
     flex: 1,
     display: 'flex',
     flexDirection: 'column',
-    alignItems: 'center',
     justifyContent: 'center',
     paddingHorizontal: 50,
+  },
+  header: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
   },
   bigText: {
     fontSize: 22,

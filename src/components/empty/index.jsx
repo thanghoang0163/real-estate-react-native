@@ -8,9 +8,11 @@ function Empty({bigText, smallText, onPress, btnText}) {
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Image source={require('../../assets/images/empty.png')} />
-        <Text style={styles.bigText}>{bigText}</Text>
-        <Text style={styles.smallText}>{smallText}</Text>
+        <View style={styles.header}>
+          <Image source={require('../../assets/images/empty.png')} />
+          <Text style={styles.bigText}>{bigText}</Text>
+          <Text style={styles.smallText}>{smallText}</Text>
+        </View>
         <BtnClick
           title={btnText}
           color={branchColor.newGreen}
