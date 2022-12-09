@@ -8,6 +8,7 @@ import Login from './src/screens/login/index';
 import Splash from './src/screens/splash/index';
 import Register from './src/screens/register/index';
 import Detail from './src/screens/detail/index';
+import UserInfo from './src/screens/account/user-info';
 import FeaturedApartment from './src/screens/featured-apartment/index';
 
 const Stack = createNativeStackNavigator();
@@ -44,6 +45,11 @@ function App() {
           <Stack.Screen
             name="FeaturedApartment"
             component={FeaturedApartment}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="UserInfo"
+            component={UserInfo}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
