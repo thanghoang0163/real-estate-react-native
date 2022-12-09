@@ -16,11 +16,12 @@ function Input({
   placeholder,
   isHidePass,
   value,
+  style,
   onPress,
   onChangeText,
 }) {
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, style]}>
       <Text style={styles.title}>{title}</Text>
       <View style={styles.inputContainer}>
         {imgLeft ? <Image style={styles.img} source={imgLeft} /> : ''}

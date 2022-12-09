@@ -19,7 +19,7 @@ export const styles = StyleSheet.create({
     marginRight: 20,
   },
   title: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: '700',
     color: '#1B1E24',
   },

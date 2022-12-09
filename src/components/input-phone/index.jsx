@@ -1,10 +1,11 @@
 import React from 'react';
 import {View, Text, TextInput, Image} from 'react-native';
 import {styles} from './styles';
+import {neutral} from '../../styles';
 
-function InputPhone({onChangeText}) {
+function InputPhone({onChangeText, style}) {
   return (
-    <View style={styles.verify}>
+    <View style={[styles.verify, style]}>
       <Text style={styles.titleVerify}>SỐ ĐIỆN THOẠI</Text>
       <View style={styles.phone}>
         <View style={[styles.phoneCode, styles.input]}>
