@@ -3,27 +3,6 @@ import {Dimensions} from 'react-native';
 import CardItem from '../card-item';
 import {styles} from './styles';
 
-const data = [
-  {
-    title: 'CĂN HỘ',
-    name: '1 Bedroom Apartment Campsie',
-    address: '2464 Royal Ln. Mesa, Melbourne',
-    image: require('../../assets/images/thumb-small.png'),
-  },
-  {
-    title: 'CĂN HỘ',
-    name: '1 Bedroom Apartment Campsie2',
-    address: '2464 Royal Ln. Mesa, Melbourne',
-    image: require('../../assets/images/thumb-small.png'),
-  },
-  {
-    title: 'CĂN HỘ',
-    name: '1 Bedroom Apartment Campsie3',
-    address: '2464 Royal Ln. Mesa, Melbourne',
-    image: require('../../assets/images/thumb-small.png'),
-  },
-];
-
 const CarouselItem = ({item, index}) => {
   return (
     <CardItem
@@ -36,7 +15,7 @@ const CarouselItem = ({item, index}) => {
   );
 };
 
-function CarouselList() {
+function CarouselList({data}) {
   return (
     <Carousel
       layout={'default'}

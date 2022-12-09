@@ -6,6 +6,7 @@ import CarDetail from '../../components/card-detail';
 import {Tab} from '@rneui/themed';
 import {styles} from './styles';
 import {neutral} from '../../styles';
+import {data} from './list';
 
 function Search({navigation: {navigate}}) {
   const [index, setIndex] = useState(0);
@@ -20,7 +21,7 @@ function Search({navigation: {navigate}}) {
         }}
       />
       <Text style={styles.title}>DỰ ÁN NỔI BẬT</Text>
-      <CarouselList />
+      <CarouselList data={data} />
       <Tab
         value={index}
         scrollable={true}
