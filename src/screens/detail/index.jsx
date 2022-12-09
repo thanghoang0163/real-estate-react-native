@@ -1,4 +1,4 @@
-import {Image, StyleSheet} from 'react-native';
+import {Image} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Search from '../search';
 import HotDeal from '../hot-deal';

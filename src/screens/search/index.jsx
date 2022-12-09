@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {View, StyleSheet, Image, Text, ScrollView} from 'react-native';
+import {Image, Text, ScrollView} from 'react-native';
 import {Searchbar} from 'react-native-paper';
 import CarouselList from '../../components/carousel';
 import CarDetail from '../../components/card-detail';
@@ -32,28 +32,36 @@ function Search({navigation: {navigate}}) {
         }}>
         <Tab.Item
           title="Tất cả"
-          titleStyle={isActived ? styles.tabItemActived : styles.tabItem}
+          titleStyle={active =>
+            active ? styles.tabItemActived : styles.tabItem
+          }
           containerStyle={active =>
             active ? styles.tabItemContainer : undefined
           }
         />
         <Tab.Item
           title="Đã hoàn thành"
-          titleStyle={isActived ? styles.tabItemActived : styles.tabItem}
+          titleStyle={active =>
+            active ? styles.tabItemActived : styles.tabItem
+          }
           containerStyle={active =>
             active ? styles.tabItemContainer : undefined
           }
         />
         <Tab.Item
           title="Đang xây dựng"
-          titleStyle={isActived ? styles.tabItemActived : styles.tabItem}
+          titleStyle={active =>
+            active ? styles.tabItemActived : styles.tabItem
+          }
           containerStyle={active =>
             active ? styles.tabItemContainer : undefined
           }
         />
         <Tab.Item
           title="Dự án tương lai"
-          titleStyle={isActived ? styles.tabItemActived : styles.tabItemActived}
+          titleStyle={active =>
+            active ? styles.tabItemActived : styles.tabItem
+          }
           containerStyle={active =>
             active ? styles.tabItemContainer : undefined
           }
