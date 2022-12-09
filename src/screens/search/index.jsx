@@ -4,46 +4,8 @@ import {Searchbar} from 'react-native-paper';
 import CarouselList from '../../components/carousel';
 import CarDetail from '../../components/card-detail';
 import {Tab} from '@rneui/themed';
-
-import {neutral, branchColor} from '../../styles';
-import {style} from 'deprecated-react-native-prop-types/DeprecatedTextPropTypes';
-
-const styles = StyleSheet.create({
-  container: {
-    paddingHorizontal: 20,
-    paddingVertical: 20,
-    backgroundColor: neutral.bgGrey,
-  },
-  title: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: neutral.title,
-    marginVertical: 10,
-  },
-  tabItem: {
-    color: neutral.subText,
-    fontSize: 14,
-    textTransform: 'uppercase',
-  },
-  tabItemActived: {
-    color: branchColor.newGreen,
-    fontSize: 14,
-    fontWeight: '700',
-    textTransform: 'uppercase',
-  },
-  tabItemContainer: {
-    backgroundColor: 'transparent',
-  },
-  indicator: {
-    backgroundColor: branchColor.newGreen,
-  },
-  searchText: {
-    fontSize: 15,
-    color: neutral.bodyText,
-    marginTop: 10,
-    marginBottom: 20,
-  },
-});
+import {styles} from './styles';
+import {neutral} from '../../styles';
 
 function Search({navigation: {navigate}}) {
   const [index, setIndex] = useState(0);

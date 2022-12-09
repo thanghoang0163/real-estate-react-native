@@ -4,16 +4,10 @@ import Search from '../search';
 import HotDeal from '../hot-deal';
 import Notification from '../notification';
 import Account from '../account';
-
+import {styles} from './styles';
 import {branchColor} from '../../styles';
 
 const Tab = createBottomTabNavigator();
-
-const styles = StyleSheet.create({
-  tabBarImg: {
-    width: 20,
-  },
-});
 
 function Detail() {
   return (

@@ -1,6 +1,7 @@
 import Carousel from 'react-native-snap-carousel';
-import {View, Text, Image, Dimensions} from 'react-native';
+import {Dimensions} from 'react-native';
 import CardItem from '../card-item';
+import {styles} from './styles';
 
 const data = [
   {

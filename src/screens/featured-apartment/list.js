@@ -1,9 +1,4 @@
-import React from 'react';
-import {View, StyleSheet, ScrollView} from 'react-native';
-import Header from '../../components/header/index';
-import CardFeature from '../../components/card-feature';
-
-const ApartmentList = [
+export const list = [
   {
     id: 1,
     title: 'Căn hộ 1',
@@ -77,38 +72,3 @@ const ApartmentList = [
     status: 'hired',
   },
 ];
-
-const styles = StyleSheet.create({
-  container: {marginVertical: 15},
-});
-
-function FeaturedApartment({navigation}) {
-  return (
-    <>
-      <Header
-        isBack={false}
-        title="Căn hộ nổi bật"
-        onPress={() => {
-          navigation.goBack();
-        }}
-      />
-      <ScrollView contentContainerStyle={styles.container}>
-        {ApartmentList.map(item => {
-          return (
-            <CardFeature
-              key={item.id}
-              title={item.title}
-              status={item.status}
-              imgSrc={item.imgSrc}
-              bedAmount={item.bedAmount}
-              bathAmount={item.bathAmount}
-              carAmount={item.carAmount}
-            />
-          );
-        })}
-      </ScrollView>
-    </>
-  );
-}
-
-export default FeaturedApartment;

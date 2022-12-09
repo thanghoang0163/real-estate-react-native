@@ -1,49 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, TouchableWithoutFeedback, StyleSheet} from 'react-native';
-import ArrowLeft from '../../assets/icons/arrow-left.svg';
+import {View, Text, TouchableWithoutFeedback} from 'react-native';
 import Input from '../../components/input';
 import BtnClick from '../../components/button';
 import Header from '../../components/header';
 import InputPassword from '../../components/input-pass';
-import {
-  neutral,
-  branchColor,
-  footer,
-  footerBtn,
-  footerText,
-} from '../../styles';
-
-const styles = StyleSheet.create({
-  container: {
-    paddingBottom: 30,
-    paddingHorizontal: 20,
-    backgroundColor: neutral.white,
-    flex: 1,
-  },
-  titleContainer: {
-    paddingBottom: 40,
-    paddingTop: 20,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: '600',
-    color: neutral.title,
-    marginBottom: 5,
-  },
-  subTitle: {
-    color: neutral.bodyText,
-    fontSize: 13,
-  },
-  forgetPassword: {
-    color: branchColor.yellow,
-    fontWeight: '600',
-    fontSize: 15,
-    marginBottom: 20,
-  },
-});
+import {branchColor, footer, footerBtn, footerText} from '../../styles';
+import {styles} from './styles';
 
 function Login({navigation}) {
   const [isEmpty, setIsEmpty] = useState(true);
