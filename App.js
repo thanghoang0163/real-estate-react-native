@@ -8,7 +8,9 @@ import Login from './src/screens/login/index';
 import Splash from './src/screens/splash/index';
 import Register from './src/screens/register/index';
 import Detail from './src/screens/detail/index';
-import UserInfo from './src/screens/account/user-info';
+import UserInfo from './src/screens/account/user-info/index';
+import Statistic from './src/screens/account/statistic/index';
+import Censorship from './src/screens/account/censorship/index';
 import FeaturedApartment from './src/screens/featured-apartment/index';
 
 const Stack = createNativeStackNavigator();
@@ -50,6 +52,16 @@ function App() {
           <Stack.Screen
             name="UserInfo"
             component={UserInfo}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Statistic"
+            component={Statistic}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="Censorship"
+            component={Censorship}
             options={{headerShown: false}}
           />
         </Stack.Navigator>

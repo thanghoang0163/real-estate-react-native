@@ -14,8 +14,6 @@ export const styles = StyleSheet.create({
     zIndex: 1,
   },
   headerImg: {
-    width: 15,
-    height: 15,
     marginRight: 20,
   },
   title: {

@@ -64,12 +64,18 @@ function Account({navigation}) {
                 <Text style={styles.bodyText}>Thông tin cá nhân</Text>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => {
+                navigation.navigate('Statistic');
+              }}>
               <View style={styles.bodyBtn}>
                 <Text style={styles.bodyText}>Thống kê</Text>
               </View>
             </TouchableWithoutFeedback>
-            <TouchableWithoutFeedback>
+            <TouchableWithoutFeedback
+              onPress={() => {
+                navigation.navigate('Censorship');
+              }}>
               <View style={styles.bodyBtn}>
                 <Text style={styles.bodyText}>Kiểm duyệt Đại lý</Text>
               </View>
