@@ -14,7 +14,12 @@ export const styles = StyleSheet.create({
     zIndex: 1,
   },
   headerImg: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     marginRight: 20,
+    padding: 10,
   },
   title: {
     fontSize: 22,

@@ -7,7 +7,6 @@ import {
   Cols,
   Rows,
 } from 'react-native-table-component';
-import {neutral} from '../../styles';
 
 function StatisticTable({
   tableHead,
@@ -29,19 +28,12 @@ function StatisticTable({
         flexArr={flexArrHead}
       />
       <TableWrapper style={wrapperStyle}>
-        {tableData.map((rowData, index) => (
-          <Row
-            key={index}
-            data={rowData}
-            flexArr={flexArrData}
-            textStyle={textStyle}
-            style={
-              index % 2 === 0
-                ? rowStyle
-                : {backgroundColor: neutral.bgGrey, paddingHorizontal: 20}
-            }
-          />
-        ))}
+        <Rows
+          data={tableData}
+          flexArr={flexArrData}
+          textStyle={textStyle}
+          style={rowStyle}
+        />
       </TableWrapper>
     </Table>
   );

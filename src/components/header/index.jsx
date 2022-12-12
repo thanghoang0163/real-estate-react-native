@@ -8,14 +8,15 @@ function Header({onPress, isBack, title, isHidden, style}) {
         {isHidden ? (
           <View></View>
         ) : (
-          <Image
-            style={styles.headerImg}
-            source={
-              isBack
-                ? require('../../assets/icons/arrow-left.png')
-                : require('../../assets/icons/display-hidden.png')
-            }
-          />
+          <View style={styles.headerImg}>
+            <Image
+              source={
+                isBack
+                  ? require('../../assets/icons/arrow-left.png')
+                  : require('../../assets/icons/display-hidden.png')
+              }
+            />
+          </View>
         )}
       </TouchableWithoutFeedback>
       <Text style={[styles.title, style]}>{title}</Text>
