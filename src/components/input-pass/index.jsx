@@ -17,8 +17,8 @@ function InputPassword({
         imgLeft={require('../../assets/icons/lock.png')}
         imgRight={
           hidePass
-            ? require('../../assets/icons/visi-password.png')
-            : require('../../assets/icons/invi-password.png')
+            ? require('../../assets/icons/invi-password.png')
+            : require('../../assets/icons/visi-password.png')
         }
         isHidePass={isHidePass}
         onPress={onPress}
