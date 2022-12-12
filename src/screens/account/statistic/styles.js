@@ -13,6 +13,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     paddingRight: 20,
+    marginBottom: 10,
   },
   title: {
     fontSize: 17,
@@ -47,16 +48,13 @@ export const styles = StyleSheet.create({
     backgroundColor: neutral.white,
   },
   chooseDate: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
+    width: 80,
+    height: 35,
     backgroundColor: neutral.bgGrey,
-    padding: 10,
     borderRadius: 4,
   },
-  dateText: {
+  chooseDateText: {
     fontSize: 13,
     color: neutral.bodyText,
-    marginRight: 10,
   },
 });

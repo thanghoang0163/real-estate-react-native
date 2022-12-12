@@ -9,6 +9,7 @@ import {
 import StatisticTable from '../../../components/table';
 import Chart from '../../../components/chart';
 import Header from '../../../components/header';
+import SelectDropdown from 'react-native-select-dropdown';
 import {styles} from './styles';
 
 const tableHeadDeposit = ['HỌ TÊN', 'EMAIL', 'NGÀY TẠO'];
@@ -67,28 +68,40 @@ function Statistic({navigation}) {
         <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.title}>Thống kê đặt cọc</Text>
-            <TouchableWithoutFeedback>
-              <View style={styles.chooseDate}>
-                <Text style={styles.dateText}>Ngày</Text>
-                <Image
-                  source={require('../../../assets/icons/arrow-bottom.png')}
-                />
-              </View>
-            </TouchableWithoutFeedback>
+            <SelectDropdown
+              data={[1, 2, 3, 4, 5]}
+              buttonStyle={styles.chooseDate}
+              buttonTextStyle={styles.chooseDateText}
+              defaultButtonText="Ngày"
+              renderDropdownIcon={() => {
+                return (
+                  <Image
+                    source={require('../../../assets/icons/arrow-bottom.png')}
+                  />
+                );
+              }}
+              dropdownIconPosition="right"
+            />
           </View>
           <Chart />
         </View>
         <View style={styles.container}>
           <View style={styles.header}>
             <Text style={styles.title}>Bất động sản được yêu thích</Text>
-            <TouchableWithoutFeedback>
-              <View style={styles.chooseDate}>
-                <Text style={styles.dateText}>Ngày</Text>
-                <Image
-                  source={require('../../../assets/icons/arrow-bottom.png')}
-                />
-              </View>
-            </TouchableWithoutFeedback>
+            <SelectDropdown
+              data={[1, 2, 3, 4, 5]}
+              buttonStyle={styles.chooseDate}
+              buttonTextStyle={styles.chooseDateText}
+              defaultButtonText="Ngày"
+              renderDropdownIcon={() => {
+                return (
+                  <Image
+                    source={require('../../../assets/icons/arrow-bottom.png')}
+                  />
+                );
+              }}
+              dropdownIconPosition="right"
+            />
           </View>
           <StatisticTable
             tableHead={tableHeadFavouriteRealEState}

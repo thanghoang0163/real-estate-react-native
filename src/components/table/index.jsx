@@ -34,11 +34,7 @@ function StatisticTable({
             key={index}
             data={rowData}
             flexArr={flexArrData}
-            textStyle={
-              rowData === 2 || rowData === 23
-                ? {textAlign: 'center'}
-                : textStyle
-            }
+            textStyle={textStyle}
             style={
               index % 2 === 0
                 ? rowStyle
