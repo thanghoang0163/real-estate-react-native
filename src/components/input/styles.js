@@ -17,8 +17,6 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 10,
   },
   img: {
-    width: 20,
-    height: 15,
     marginRight: 5,
   },
   input: {
