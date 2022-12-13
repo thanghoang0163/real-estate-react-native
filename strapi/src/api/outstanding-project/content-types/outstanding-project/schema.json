@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "outstanding_projects",
+  "info": {
+    "singularName": "outstanding-project",
+    "pluralName": "outstanding-projects",
+    "displayName": "outstanding project",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "text"
+    },
+    "name": {
+      "type": "text"
+    },
+    "address": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

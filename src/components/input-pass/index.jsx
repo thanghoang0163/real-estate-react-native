@@ -8,6 +8,7 @@ function InputPassword({
   isHidePass,
   onPress,
   onChangeText,
+  value,
 }) {
   return (
     <>
@@ -23,6 +24,7 @@ function InputPassword({
         isHidePass={isHidePass}
         onPress={onPress}
         onChangeText={onChangeText}
+        value={value}
       />
     </>
   );

@@ -6,16 +6,31 @@ import Header from '../../components/header';
 import InputPassword from '../../components/input-pass';
 import {branchColor, footer, footerBtn, footerText} from '../../styles';
 import {styles} from './styles';
+import {Alert} from 'react-native';
 
 function Login({navigation}) {
   const [isEmpty, setIsEmpty] = useState(true);
   const [hidePass, setHidePass] = useState(true);
   const [emailText, setEmailText] = useState('');
   const [passText, setPassText] = useState('');
+  const [login, setLogin] = useState('');
 
   useEffect(() => {
     emailText !== '' || passText !== '' ? setIsEmpty(false) : setIsEmpty(true);
+    getLogin();
   });
+
+  const getLogin = async () => {
+    try {
+      const response = await fetch('http://localhost:1337/api/login');
+      const json = await response.json();
+      // setLogin(json);
+      Alert.alert(json);
+    } catch (error) {
+      // Alert.alert(error.message);
+    }
+  };
+
   return (
     <>
       <Header
@@ -40,17 +55,20 @@ function Login({navigation}) {
             imgLeft={require('../../assets/icons/mail.png')}
             onChangeText={e => {
               setEmailText(e);
+              setIsEmpty(false);
             }}
+            value={login ? login.attributes.email : ''}
           />
           <InputPassword
             title="MẬT KHẨU"
             placeholder="Nhập vào mật khẩu"
-            isHidePass={hidePass ? true : false}
+            isHidePass={hidePass}
             onPress={() => {
               hidePass ? setHidePass(false) : setHidePass(true);
             }}
             onChangeText={e => {
               setPassText(e);
+              setIsEmpty(false);
             }}
             hidePass={hidePass}
           />
@@ -65,7 +83,7 @@ function Login({navigation}) {
           onPress={() => {
             navigation.navigate('Detail');
           }}
-          disabled={isEmpty ? true : false}
+          disabled={isEmpty}
           color={branchColor.newGreen}
         />
         <View style={footer}>

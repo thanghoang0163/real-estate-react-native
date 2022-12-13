@@ -4,7 +4,7 @@ import CardDeal from '../../components/card-deal';
 import {list} from './list';
 import {styles} from './styles';
 
-function HotDeal() {
+function HotDeal({navigation}) {
   return (
     <>
       <Header isHidden={true} title="Hot deal" style={styles.title} />
@@ -17,6 +17,9 @@ function HotDeal() {
                 imgSrc={item.imgSrc}
                 desc={item.desc}
                 title={item.title}
+                onPress={() => {
+                  navigation.navigate('DetailHotDeal');
+                }}
               />
             );
           })}

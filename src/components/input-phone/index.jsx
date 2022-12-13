@@ -3,7 +3,7 @@ import {View, Text, TextInput, Image} from 'react-native';
 import {styles} from './styles';
 import {neutral} from '../../styles';
 
-function InputPhone({onChangeText, style}) {
+function InputPhone({onChangeText, style, value}) {
   return (
     <View style={[styles.verify, style]}>
       <Text style={styles.titleVerify}>SỐ ĐIỆN THOẠI</Text>
@@ -17,6 +17,7 @@ function InputPhone({onChangeText, style}) {
           placeholder="Nhập số điện thoại"
           placeholderTextColor={neutral.subText}
           onChangeText={onChangeText}
+          value={value}
         />
       </View>
     </View>

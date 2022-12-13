@@ -11,6 +11,7 @@ import Detail from './src/screens/detail/index';
 import UserInfo from './src/screens/account/user-info/index';
 import Statistic from './src/screens/account/statistic/index';
 import Censorship from './src/screens/account/censorship/index';
+import DetailHotDeal from './src/screens/hot-deal/detail-hot-deal';
 import FeaturedApartment from './src/screens/featured-apartment/index';
 
 const Stack = createNativeStackNavigator();
@@ -62,6 +63,11 @@ function App() {
           <Stack.Screen
             name="Censorship"
             component={Censorship}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="DetailHotDeal"
+            component={DetailHotDeal}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
