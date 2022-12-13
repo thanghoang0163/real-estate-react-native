@@ -8,9 +8,15 @@ export const styles = StyleSheet.create({
   phone: {
     display: 'flex',
     flexDirection: 'row',
+    alignItems: 'center',
   },
   phoneCode: {
-    marginRight: 10,
+    width: 100,
+    backgroundColor: neutral.white,
+    borderColor: neutral.lineStroke,
+    borderWidth: 1,
+    borderStyle: 'solid',
+    borderRadius: 8,
   },
   phoneCodeText: {
     fontSize: 15,
@@ -19,6 +25,7 @@ export const styles = StyleSheet.create({
   },
   inputPhone: {
     flex: 1,
+    marginLeft: 10,
   },
   input: {
     display: 'flex',
